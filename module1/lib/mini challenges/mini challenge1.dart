@@ -11,34 +11,65 @@ class FoodDiscoveryApp extends StatelessWidget {
       home: Scaffold(
         body: SingleChildScrollView(
           child: Column(
-            
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  Column(
-                    children: [
-                      Text("Hello Pugal"),
-                      Text("Coimbatore, Tamil nadu"),
-                ],
-              ),
-              SizedBox(width: 280,),
               Container(
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(18)
+                margin: EdgeInsets.only(
                   
                 ),
-                height: 20,
-                width: 20,
-                child: Center(
-                  child: Text("P"),
+                decoration: BoxDecoration(
+                  color: Colors.green.shade200
                 ),
-              )
-            ],
-          ),
+                child: Row(
+                  
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(
+                            top: 10,
+                            left: 10
+                          ),
+                          child: Text("Hello Pugal",
+                          style: TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold),
+                            ),
+                        ),
+                
+                        Container(
+                          padding: EdgeInsets.only(
+                            left: 10
+                          ),
+                          child: Text("Coimbatore, Tamil nadu",
+                          style: TextStyle(
+                                        color: Colors.grey[700],
+                                      ),
+                          ),
+                        ),
+                        
+                  ],
+                ),
+                SizedBox(width: 280,),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(18)
+                    
+                  ),
+                  height: 25,
+                  width: 25,
+                  child: Center(
+                    child: Text("P"),
+                  ),
+                )
+                            ],
+                          ),
+              ),
           
           
-          SizedBox(height: 100,),
+          SizedBox(height: 80,),
           
           
                  Stack(
@@ -46,6 +77,7 @@ class FoodDiscoveryApp extends StatelessWidget {
           
               // Banner background
               Container(
+                margin: EdgeInsets.only(left: 10),
                 height: 140,
                 width: 480,
                 decoration: BoxDecoration(
@@ -57,11 +89,11 @@ class FoodDiscoveryApp extends StatelessWidget {
               // Floating badge
               Positioned(
                 top: 10,
-                left: 10,
+                left: 15,
           
                 child: Container(
           padding: EdgeInsets.symmetric(
-            horizontal: 10,
+            horizontal: 15,
             vertical: 5,
           ),
 
@@ -78,7 +110,7 @@ borderRadius: BorderRadius.circular(15)
           
               // Bottom texts
               Positioned(
-                left: 14,
+                left: 20,
                 bottom: 15,
           
                 child: Column(
