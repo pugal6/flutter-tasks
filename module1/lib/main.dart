@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:module1/tasks/Image_icon_task.dart';
+import 'package:module1/tasks/CustomTheme.dart';
 
 
 void main() {
-  runApp(ImageIconTask());
+  runApp(CustomTheme());
 }
 
 
