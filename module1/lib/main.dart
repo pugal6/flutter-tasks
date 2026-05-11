@@ -1,20 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:module1/mini challenges/movie ticket booking/theme/app_theme.dart';
-import 'package:module1/mini challenges/movie ticket booking/screens/movie_booking_screen.dart';
+import 'package:module1/module project/screens/home_screen.dart';
 
 void main() {
-  runApp(const MovieBookingApp());
+  runApp(const LocalConnectApp());
 }
 
-class MovieBookingApp extends StatelessWidget {
-  const MovieBookingApp({super.key});
+class LocalConnectApp extends StatelessWidget {
+  const LocalConnectApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.darkTheme,
-      home: const MovieBookingScreen(),
+      title: 'LocalConnect',
+      theme: ThemeData(
+        scaffoldBackgroundColor: const Color(0xFFF5F7FB),
+        primaryColor: const Color(0xFF4F46E5),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF4F46E5),
+        ),
+        fontFamily: 'Roboto',
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+        ),
+      ),
+      home: const HomeScreen(),
     );
   }
 }
