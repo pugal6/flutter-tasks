@@ -1,23 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:module2/practice%20tasks/provider%20task/providers/weather_provider.dart';
-import 'package:provider/provider.dart';
-import 'practice tasks/provider task/screens/home_screen.dart';
-import 'practice tasks/provider task/providers/delivery_provider.dart';
+import 'package:module2/practice%20tasks/bloc%20task/screens/home_screen.dart';
 
 void main() {
-  runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (_) => WeatherProvider(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => DeliveryProvider(),
-        ),
-      ],
-      child: const MyApp(),
-    ),
-  );
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
