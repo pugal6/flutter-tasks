@@ -1,21 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:module2/mini challenges/mini challenge1/screens/smart_home_screen.dart';
+import 'package:module2/practice%20tasks/provider%20task/providers/weather_provider.dart';
+import 'package:provider/provider.dart';
+import 'practice tasks/provider task/screens/home_screen.dart';
+import 'practice tasks/provider task/providers/delivery_provider.dart';
 
 void main() {
-  runApp(const SmartHomeApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => WeatherProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => DeliveryProvider(),
+        ),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
-class SmartHomeApp extends StatelessWidget {
-  const SmartHomeApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: const Color(0xFFF4F6FA),
-      ),
-      home: const SmartHomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }
