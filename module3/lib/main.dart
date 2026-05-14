@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'music_home_screen.dart';
+import 'package:module3/tab%20navigation%20task/task2/screens/finance_home_screen.dart';
 
 void main() {
-  runApp(const MusicApp());
+  runApp(const FinanceApp());
 }
 
-class MusicApp extends StatelessWidget {
-  const MusicApp({super.key});
+class FinanceApp extends StatelessWidget {
+  const FinanceApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const MusicHomeScreen(),
+      home: const FinanceHomeScreen(),
     );
   }
 }
