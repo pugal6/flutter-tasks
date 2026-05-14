@@ -1,43 +1,65 @@
+
 import 'package:go_router/go_router.dart';
-import 'package:module3/go%20router%20task/models/book.dart';
-import 'package:module3/go%20router%20task/screens/app_selection_screen.dart';
-import 'package:module3/go%20router%20task/screens/auth/dashboard_screen.dart';
-import 'package:module3/go%20router%20task/screens/auth/login_screen.dart';
-import 'package:module3/go%20router%20task/screens/bookstore/book_details_screen.dart';
-import 'package:module3/go%20router%20task/screens/bookstore/home_screen.dart';
+import 'package:module3/mini%20challenge2/screens/details_screen.dart';
+import 'package:module3/mini%20challenge2/screens/home_screen.dart';
+import 'package:module3/mini%20challenge2/screens/main_navigation_screen.dart';
+import 'package:module3/mini%20challenge2/screens/profile_screen.dart';
+import 'package:module3/mini%20challenge2/screens/trending_screen.dart';
 
 final GoRouter appRouter = GoRouter(
-  initialLocation: '/',
+  initialLocation: '/home',
   routes: [
-    GoRoute(
-      path: '/',
-      builder: (context, state) => const AppSelectionScreen(),
-    ),
-
-    // Bookstore Routes
-    GoRoute(
-      path: '/books',
-      builder: (context, state) => const HomeScreen(),
-    ),
-
-    GoRoute(
-      path: '/book-details',
-      builder: (context, state) {
-        final book = state.extra as Book;
-
-        return BookDetailsScreen(book: book);
+    StatefulShellRoute.indexedStack(
+      builder: (context, state, navigationShell) {
+        return MainNavigationScreen(
+          navigationShell: navigationShell,
+        );
       },
+
+      branches: [
+        StatefulShellBranch(
+          routes: [
+            GoRoute(
+              path: '/home',
+              builder: (context, state) {
+                return const HomeScreen();
+              },
+            ),
+          ],
+        ),
+
+        StatefulShellBranch(
+          routes: [
+            GoRoute(
+              path: '/trending',
+              builder: (context, state) {
+                return const TrendingScreen();
+              },
+            ),
+          ],
+        ),
+
+        StatefulShellBranch(
+          routes: [
+            GoRoute(
+              path: '/profile',
+              builder: (context, state) {
+                return const ProfileScreen();
+              },
+            ),
+          ],
+        ),
+      ],
     ),
 
-    // Auth Routes
     GoRoute(
-      path: '/login',
-      builder: (context, state) => const LoginScreen(),
-    ),
+      path: '/details',
+      builder: (context, state) {
+        final movie =
+            state.extra as Map<String, String>;
 
-    GoRoute(
-      path: '/dashboard',
-      builder: (context, state) => const DashboardScreen(),
+        return DetailsScreen(movie: movie);
+      },
     ),
   ],
 );

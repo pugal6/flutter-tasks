@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:module3/tab%20navigation%20task/task2/screens/finance_home_screen.dart';
+import 'router.dart';
 
 void main() {
-  runApp(const FinanceApp());
+  runApp(const StreamingApp());
 }
 
-class FinanceApp extends StatelessWidget {
-  const FinanceApp({super.key});
+class StreamingApp extends StatelessWidget {
+  const StreamingApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      home: const FinanceHomeScreen(),
+      routerConfig: appRouter,
     );
   }
 }
