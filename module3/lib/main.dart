@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'router.dart';
+import 'music_home_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MusicApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MusicApp extends StatelessWidget {
+  const MusicApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      routerConfig: appRouter,
-      title: 'GoRouter Practice Apps',
+      home: const MusicHomeScreen(),
     );
   }
 }
