@@ -1,23 +1,36 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:module5/mini%20challenges/mini%20challenge1/screens/inventory_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
-  runApp(const InventoryApp());
+import 'mini challenges/mini challenge2/screens/home_screen.dart';
+
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp();
+
+  FirebaseFirestore.instance.settings =
+    const Settings(
+      persistenceEnabled: true,
+    );
+
+  runApp(const ExpenseTrackerApp());
 }
 
-class InventoryApp extends StatelessWidget {
-  const InventoryApp({super.key});
+class ExpenseTrackerApp extends StatelessWidget {
+  const ExpenseTrackerApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Inventory Tracker',
+      title: 'Expense Tracker',
       theme: ThemeData(
         primarySwatch: Colors.indigo,
-        scaffoldBackgroundColor: const Color(0xFFF5F7FB),
+        scaffoldBackgroundColor: const Color(0xfff5f7fb),
       ),
-      home: const InventoryScreen(),
+      home: const HomeScreen(),
     );
   }
 }
