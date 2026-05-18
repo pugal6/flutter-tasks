@@ -4,7 +4,6 @@ import '../widgets/category_card.dart';
 import '../widgets/event_card.dart';
 import '../widgets/featured_event_card.dart';
 import '../widgets/gallery_item.dart';
-import '../widgets/section_header.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
