@@ -1,30 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:module5/sqlite%20task/screens/home_screen.dart';
+import 'package:module5/mini%20challenges/mini%20challenge1/screens/inventory_screen.dart';
 
-
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  runApp(const MyApp());
+void main() {
+  runApp(const InventoryApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class InventoryApp extends StatelessWidget {
+  const InventoryApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Productivity Hub',
+      title: 'Inventory Tracker',
       theme: ThemeData(
-        useMaterial3: true,
-        fontFamily: 'Roboto',
+        primarySwatch: Colors.indigo,
         scaffoldBackgroundColor: const Color(0xFFF5F7FB),
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.indigo,
-        ),
       ),
-      home: const HomeScreen(),
+      home: const InventoryScreen(),
     );
   }
 }
